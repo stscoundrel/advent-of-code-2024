@@ -24,7 +24,13 @@ List<List<int>> getTestInputAsLists(String testInput) {
 
 void main(List<String> arguments) {
   var inputLists = getTestInputAsLists(input);
-  int result = solveDay01(inputLists[0], inputLists[1]);
+  int result1 = solvePart1(inputLists[0], inputLists[1]);
 
-  print(result);
+  print("Part 1:");
+  print(result1);
+
+  int result2 = solvePart2(inputLists[0], inputLists[1]);
+
+  print("Part 2:");
+  print(result2);
 }
