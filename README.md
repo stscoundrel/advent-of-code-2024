@@ -4,3 +4,4 @@ Advent of Code 2024, each day in different programming language. Unlikely to fin
 
 - Day 1: Dart
 - Day 2: Nim
+- Day 3: Scala
