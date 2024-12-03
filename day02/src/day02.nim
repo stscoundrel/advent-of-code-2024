@@ -25,16 +25,37 @@ proc listIsSafe(list: seq[int]): bool =
 
   return true
 
+proc listIsSafeWithDampener(list: seq[int]): bool =
+  for idx, number in list.pairs():
+    let newList = list[0..idx-1] & list[idx+1..^1]
+
+    if listIsSafe(newList):
+      return true
+
+  return false
+
 proc solvePart1(input: string): int =
   let lists = inputToLists(input)  
   for list in lists:
     if listIsSafe(list):
       result += 1
+
+proc solvePart2(input: string): int =
+  let lists = inputToLists(input)
+
+  for list in lists:
+    if listIsSafe(list):
+      result += 1
+    elif listIsSafeWithDampener(list):
+      result += 1
+
   
 export solvePart1
+export solvePart2
 
 when isMainModule:
   echo("Part 1")
   let fileContent = readFile("src/input.txt")
 
   echo solvePart1(fileContent)
+  echo solvePart2(fileContent)
