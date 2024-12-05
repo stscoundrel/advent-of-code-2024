@@ -2,11 +2,10 @@ namespace Day05;
 
 public class Part1
 {
-    private static (List<(int, int)> Rules, List<List<int>> Publications) ParseInput(string input)
+    public static (List<(int, int)> Rules, List<List<int>> Publications) ParseInput(string input)
     {
         var parts = input.Split(new[] { "\n\n" }, StringSplitOptions.RemoveEmptyEntries);
-
-
+        
         var rules = parts[0]
             .Split(new[] { '\n' }, StringSplitOptions.RemoveEmptyEntries)
             .Select(rule =>
@@ -29,7 +28,7 @@ public class Part1
         return (rules, publications);
     }
 
-    private static bool IsValidPublication(List<int> publication, List<(int, int)> rules)
+    public static bool IsValidPublication(List<int> publication, List<(int, int)> rules)
     {
         foreach (var rule in rules)
             if (publication.Contains(rule.Item1) && publication.Contains(rule.Item2))
@@ -42,7 +41,7 @@ public class Part1
     public static int SolvePart1(string input)
     {
         var (rules, publications) = ParseInput(input);
-        
+
         return publications
             .Where(publication => IsValidPublication(publication, rules))
             .Select(list => list[list.Count / 2])
