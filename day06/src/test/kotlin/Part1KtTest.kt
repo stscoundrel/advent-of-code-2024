@@ -2,6 +2,7 @@ import org.junit.jupiter.api.Assertions.assertEquals
 import org.junit.jupiter.api.Test
 
 class Part1KtTest {
+
     @Test
     fun solvesPart1() {
         val testInput = """....#.....
@@ -18,5 +19,22 @@ class Part1KtTest {
         """.trimIndent()
 
         assertEquals(solvePart1(testInput), 41)
+    }
+
+    @Test
+    fun solvesPart2() {
+        val testInput = """....#.....
+.........#
+..........
+..#.......
+.......#..
+..........
+.#..^.....
+........#.
+#.........
+......#...
+""".trimIndent()
+
+        assertEquals(solvePart2(testInput), 6)
     }
 }

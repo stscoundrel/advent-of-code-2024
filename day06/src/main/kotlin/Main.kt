@@ -6,4 +6,5 @@ fun main(args: Array<String>) {
     val input = file.readText()
 
     println("Part 1: " + solvePart1(input))
+    println("Part 2: " + solvePart2(input))
 }
