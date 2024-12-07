@@ -8,3 +8,4 @@ Advent of Code 2024, each day in different programming language. Unlikely to fin
 - Day 4: Java
 - Day 5: C#
 - Day 6: Kotlin
+- Day 7: Rust

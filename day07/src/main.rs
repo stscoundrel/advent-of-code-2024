@@ -1,9 +1,9 @@
 mod part1;
+mod part2;
 
 use std::fs::File;
 use std::io::{self, Read};
 
-use part1::solve_part_1;
 
 fn read_file(file_path: &str) -> io::Result<String> {
     let mut file = File::open(file_path)?;
@@ -14,7 +14,9 @@ fn read_file(file_path: &str) -> io::Result<String> {
 
 fn main() {
     let input = read_file("input.txt").unwrap();
-    let result1 = solve_part_1(&input);
+    let result1 = part1::solve_part_1(&input);
+    let result2 = part2::solve_part_2(&input);
 
-    print!("Part 1: {}", result1)
+    print!("Part 1: {}", result1);
+    print!("Part 2: {}", result2);
 }
