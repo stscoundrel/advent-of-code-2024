@@ -18,5 +18,7 @@ func readInput(filename string) string {
 func main() {
 	input := readInput("input.txt")
 	part1 := SolvePart1(input)
+	part2 := SolvePart2(input)
 	fmt.Printf("Part 1: %d\n", part1)
+	fmt.Printf("Part 2: %d\n", part2)
 }
