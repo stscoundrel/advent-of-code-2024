@@ -11,3 +11,4 @@ Advent of Code 2024, each day in different programming language. Unlikely to fin
 - Day 7: Rust
 - Day 8: Go
 - Day 9: Python
+- Day 10: TypeScript
