@@ -2,13 +2,14 @@
 
 Advent of Code 2024, each day in different programming language. Unlikely to finish even half of the days, more of a höntsäthingy.
 
-- Day 1: Dart
-- Day 2: Nim
-- Day 3: Scala
-- Day 4: Java
-- Day 5: C#
-- Day 6: Kotlin
-- Day 7: Rust
-- Day 8: Go
-- Day 9: Python
+- Day 01: Dart
+- Day 02: Nim
+- Day 03: Scala
+- Day 04: Java
+- Day 05: C#
+- Day 06: Kotlin
+- Day 07: Rust
+- Day 08: Go
+- Day 09: Python
 - Day 10: TypeScript
+- Day 11: C++
