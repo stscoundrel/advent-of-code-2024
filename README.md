@@ -13,3 +13,4 @@ Advent of Code 2024, each day in different programming language. Unlikely to fin
 - Day 09: Python
 - Day 10: TypeScript
 - Day 11: C++
+- Day 12: JavaScript

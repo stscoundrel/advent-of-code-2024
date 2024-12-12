@@ -103,4 +103,52 @@ const solvePart1 = () => {
   console.log(sum)
 }
 
+const isInPlot = (x, y, plot) => plot.some(tile => tile.x === x && tile.y === y)
+
+const calculatePriceBySides = (plot, matrix) => {
+  let corners = 0
+
+  // Time to stop cutting corners by counting corners.
+  plot.forEach(tile => {
+    const up = isInPlot(tile.x, tile.y - 1, plot)
+    const down = isInPlot(tile.x, tile.y + 1, plot)
+    const left = isInPlot(tile.x - 1, tile.y, plot)
+    const right = isInPlot(tile.x + 1, tile.y, plot)
+    const upLeft = isInPlot(tile.x - 1, tile.y - 1, plot)
+    const upRight = isInPlot(tile.x + 1, tile.y - 1, plot)
+    const downLeft = isInPlot(tile.x - 1, tile.y + 1, plot)
+    const downRight = isInPlot(tile.x + 1, tile.y + 1, plot)
+
+    // Really wish I was cutting corners instead.
+    if(up === false && left === false && upLeft == false) corners++
+    if(up === false && right === false && upRight == false) corners++
+    if(down === false && left === false && downLeft == false) corners++
+    if(down === false && right === false && downRight == false) corners++
+
+    if(down === true && right === true && downRight == false) corners++
+    if(down === true && left === true && downLeft == false) corners++
+    if(up === true && right === true && upRight == false) corners++
+    if(up === true && left === true && upLeft == false) corners++
+
+    if(down === false && right === false && downRight == true) corners++
+    if(down === false && left === false && downLeft == true) corners++
+    if(up === false && right === false && upRight == true) corners++
+    if(up === false && left === false && upLeft == true) corners++
+  })
+
+  return corners * plot.length
+}
+
+const solvePart2 = () => {
+  const matrix = inputToMatrix(testInput)
+  const plots = matrixToPlots(matrix)
+  
+  const sum = plots
+    .map(plot => calculatePriceBySides(plot, matrix))
+    .reduce((accumulator, current) => accumulator + current, 0);
+    
+  console.log(sum)
+}
+
 solvePart1()
+solvePart2()
