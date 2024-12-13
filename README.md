@@ -14,3 +14,6 @@ Advent of Code 2024, each day in different programming language. Unlikely to fin
 - Day 10: TypeScript
 - Day 11: C++
 - Day 12: JavaScript
+- Day 13: Odin
+
+Stopped after Day 13 part 1, as it is exactly the halfway point.
